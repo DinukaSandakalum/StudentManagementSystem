@@ -15,8 +15,12 @@ public class Grade {
             }
 
             avg = total/i.results.size();
-            average.add(Double.toString(avg)+"#"+i.getStdName());
-
+            if(avg<10) {
+                average.add("0"+Double.toString(avg) + "#" + i.getStdName());
+            }
+            else{
+                average.add(Double.toString(avg) + "#" + i.getStdName());
+            }
         }
 
         System.out.println(average);
@@ -25,9 +29,23 @@ public class Grade {
 
         System.out.println("Grades :");
 
+        int place = 1;
+
         for(int j=average.size()-1; j>=0; j--){
             int i=average.size()-j;
-            System.out.println(Integer.toString(i)+" : "+average.get(j).split("#")[1]);
+            if (j!=average.size()-1){
+                if (average.get(j).split("#")[0].equals(average.get(j+1).split("#")[0]))  {
+                    System.out.println(Integer.toString(place) + " : " + average.get(j).split("#")[1]);
+                }
+                else{
+                    System.out.println(Integer.toString(i) + " : " + average.get(j).split("#")[1]);
+                    place = i;
+                }
+            }
+            else{
+                System.out.println(Integer.toString(i) + " : " + average.get(j).split("#")[1]);
+                place = i;
+            }
         }
     }
 }

@@ -77,10 +77,10 @@ public class Main {
             st2.addSubjectMarks(s4,80);
             st2.addSubjectMarks(s5,90);
 
-            st3.addSubjectMarks(s1,55);
+            st3.addSubjectMarks(s1,90);
             st3.addSubjectMarks(s2,80);
             st3.addSubjectMarks(s3,70);
-            st3.addSubjectMarks(s4,40);
+            st3.addSubjectMarks(s4,80);
             st3.addSubjectMarks(s5,90);
 
             System.out.println();
